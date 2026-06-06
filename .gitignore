@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+*.DS_Store
+NOuse/
+dist/
+build/
+.env
+.env.local
+*.zip
+Previous YOT-website-final 2 website /
+NOuse NOuse/YOT-website-final 2.zip
