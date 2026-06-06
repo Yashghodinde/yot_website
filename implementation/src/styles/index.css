@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-light: #f8fafb;
+  --bg-white: #ffffff;
+  --bg-dark: #09090b;
+  --bg-dark-2: #111114;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-inverse: #ffffff;
+  --text-muted: #94a3b8;
+  --accent: #0d9488;
+  --accent-light: #14b8a6;
+  --accent-dark: #0f766e;
+  --accent-bg: #f0fdfa;
+  --accent-border: #99f6e4;
+  --border: #e2e8f0;
+  --border-dark: #1e293b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.section-shell {
+  width: min(1200px, calc(100vw - 32px));
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+
+.dark-grid {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    #09090b;
+  background-size: 44px 44px;
+}
+
+.subtle-teal-panel {
+  background:
+    linear-gradient(135deg, rgba(13, 148, 136, 0.16), rgba(17, 17, 20, 0) 42%),
+    #09090b;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+}
+
+.ticker-left {
+  animation: tickerLeft 35s linear infinite;
+}
+
+.ticker-right {
+  animation: tickerRight 35s linear infinite;
+}
+
+.ticker-left:hover,
+.ticker-right:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tickerLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tickerRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.bounce-soft {
+  animation: bounceSoft 1.6s ease-in-out infinite;
+}
+
+.video-frame {
+  width: 100%;
+  border: 0;
+  background: #111114;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
